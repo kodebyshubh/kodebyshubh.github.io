@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shubh Bohra | AI Engineer</title>
+<meta name="description" content="Shubh Bohra, AI/LLM engineer building agentic systems, RAG pipelines and real-time voice AI. Final-year CS student at DSCE Bengaluru.">
+<meta property="og:title" content="Shubh Bohra | AI Engineer">
+<meta property="og:description" content="Agentic systems, RAG pipelines and real-time voice AI.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/181488523?v=4">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230b0f14'/><text x='5' y='22' font-family='monospace' font-size='16' fill='%2338e27d'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f14; --bg2:#10161d; --card:#121a22; --line:#1f2a36; --line2:#2a3947;
+  --text:#d6e1ea; --muted:#8a9aab; --dim:#5d6d7e;
+  --green:#38e27d; --cyan:#4fd1e8; --amber:#f5b94a; --pink:#f472b6; --violet:#a78bfa;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(circle at 1px 1px,#16202a 1px,transparent 0);background-size:28px 28px}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--green);color:#04130a}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.mono{font-family:var(--mono)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--mono);font-weight:700;color:var(--green)}
+.logo span{color:var(--text)}
+.links{display:flex;gap:22px;font-family:var(--mono);font-size:13px}
+.links a{color:var(--muted);transition:color .2s}
+.links a:hover{color:var(--green)}
+.links a b{color:var(--green);font-weight:400}
+.menu-btn{display:none;background:none;border:1px solid var(--line2);color:var(--text);font-family:var(--mono);padding:6px 10px;border-radius:6px;cursor:pointer}
+
+/* hero */
+.hero{padding:90px 0 70px;display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--green);border:1px solid #1d4d33;background:#0f2019;padding:5px 12px;border-radius:999px;margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-size:clamp(38px,6vw,62px);line-height:1.05;letter-spacing:-.02em;font-weight:700}
+h1 .g{background:linear-gradient(90deg,var(--green),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-family:var(--mono);color:var(--muted);margin:18px 0 22px;font-size:15px;min-height:24px}
+.role .typed{color:var(--cyan)}
+.caret{display:inline-block;width:9px;height:17px;background:var(--green);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--muted);max-width:540px;font-size:16.5px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{font-family:var(--mono);font-size:13.5px;padding:11px 18px;border-radius:8px;border:1px solid var(--line2);transition:all .2s;display:inline-flex;gap:8px;align-items:center}
+.btn:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
+.btn.primary{background:var(--green);color:#04130a;border-color:var(--green);font-weight:700}
+.btn.primary:hover{background:#5ef097;color:#04130a}
+
+.term{background:#0d1319;border:1px solid var(--line2);border-radius:12px;box-shadow:0 30px 80px -30px rgba(56,226,125,.25);overflow:hidden}
+.term-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:#0f171e}
+.term-bar i{width:11px;height:11px;border-radius:50%;display:block}
+.term-bar i:nth-child(1){background:#ff5f57}.term-bar i:nth-child(2){background:#febc2e}.term-bar i:nth-child(3){background:#28c840}
+.term-bar span{margin-left:10px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.term-body{padding:18px 18px 22px;font-family:var(--mono);font-size:13px;line-height:1.75;min-height:320px}
+.term-body .p{color:var(--green)}
+.term-body .k{color:var(--cyan)}
+.term-body .s{color:var(--amber)}
+.term-body .c{color:var(--dim)}
+.term-body .v{color:var(--pink)}
+
+/* sections */
+section{padding:80px 0;scroll-margin-top:60px}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:36px}
+.sh .n{font-family:var(--mono);color:var(--green);font-size:14px}
+.sh h2{font-size:28px;letter-spacing:-.01em}
+.sh .ln{flex:1;height:1px;background:var(--line);transform:translateY(-6px)}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about p{color:var(--muted);margin-bottom:14px}
+.about p b{color:var(--text);font-weight:600}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.stat .num{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--green)}
+.stat .lbl{font-size:13px;color:var(--muted)}
+.avatar{display:flex;gap:14px;align-items:center;margin-bottom:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;grid-column:1/-1}
+.avatar img{width:56px;height:56px;border-radius:50%;border:2px solid var(--green)}
+.avatar div{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.avatar div b{color:var(--text);display:block;font-size:15px}
+
+/* experience */
+.tl{position:relative;padding-left:28px}
+.tl:before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line2)}
+.job{position:relative;margin-bottom:34px}
+.job:before{content:"";position:absolute;left:-27px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--green)}
+.job-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+.job h3{font-size:18px}
+.job h3 span{color:var(--green)}
+.when{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+.job ul{list-style:none;margin-top:10px}
+.job li{color:var(--muted);padding-left:20px;position:relative;margin-bottom:7px;font-size:15px}
+.job li:before{content:"▹";position:absolute;left:0;color:var(--green)}
+.job li b{color:var(--text);font-weight:600}
+
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.filters button{font-family:var(--mono);font-size:12.5px;background:var(--card);border:1px solid var(--line);color:var(--muted);padding:7px 14px;border-radius:999px;cursor:pointer;transition:all .2s}
+.filters button:hover{color:var(--text);border-color:var(--line2)}
+.filters button.on{background:#0f2019;border-color:var(--green);color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);border-color:#2b5a41;box-shadow:0 18px 40px -22px rgba(56,226,125,.35)}
+.card.hide{display:none}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}
+.card .kind{font-family:var(--mono);font-size:11.5px;color:var(--cyan)}
+.card h3{font-size:19px;margin-top:2px}
+.card .icons{display:flex;gap:10px;flex-shrink:0}
+.card .icons a{color:var(--muted);transition:color .2s;display:flex}
+.card .icons a:hover{color:var(--green)}
+.card p{color:var(--muted);font-size:14.5px;margin-bottom:12px}
+.card .hl{font-family:var(--mono);font-size:12.5px;color:var(--text);background:#0d1319;border:1px solid var(--line);border-left:3px solid var(--green);border-radius:6px;padding:9px 12px;margin-bottom:14px}
+.card .hl em{color:var(--green);font-style:normal}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.stack span{font-family:var(--mono);font-size:11.5px;color:var(--dim);background:#0d1319;border:1px solid var(--line);padding:3px 8px;border-radius:5px}
+.live{font-family:var(--mono);font-size:10.5px;color:#04130a;background:var(--green);padding:2px 7px;border-radius:4px;margin-left:8px;vertical-align:3px;font-weight:700}
+
+.more-h{font-family:var(--mono);color:var(--muted);font-size:14px;margin:56px 0 16px}
+.more-h b{color:var(--green);font-weight:400}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mini a{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:15px 16px;transition:border-color .2s,transform .2s;display:block}
+.mini a:hover{border-color:var(--green);transform:translateY(-2px)}
+.mini b{font-family:var(--mono);font-size:13.5px;color:var(--text);display:block;margin-bottom:4px}
+.mini span{font-size:13px;color:var(--muted);display:block;line-height:1.5}
+.mini b .live{display:inline;color:#04130a;font-size:10px;line-height:1.4}
+.mini i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--dim);display:block;margin-top:8px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.sk h4{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:12px;font-weight:500}
+.sk h4:before{content:"$ ";color:var(--dim)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{font-size:13px;padding:5px 10px;border-radius:6px;background:#0d1319;border:1px solid var(--line);color:var(--text)}
+
+/* awards */
+.awards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.aw{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;gap:16px}
+.aw .ic{font-size:22px;width:44px;height:44px;border-radius:10px;background:#1d1a0e;border:1px solid #4a3d15;display:grid;place-items:center;flex-shrink:0;color:var(--amber);font-family:var(--mono)}
+.aw h3{font-size:16.5px}
+.aw .when{display:block;margin:2px 0 6px}
+.aw p{color:var(--muted);font-size:14.5px}
+
+/* contact */
+.contact{text-align:center;max-width:620px;margin:0 auto}
+.contact h2{font-size:clamp(30px,5vw,44px);margin:10px 0 14px}
+.contact p{color:var(--muted);margin-bottom:28px}
+.contact .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-family:var(--mono);font-size:12px;color:var(--dim)}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:60px}
+  .about{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .mini{grid-template-columns:1fr 1fr}
+  .skills{grid-template-columns:1fr 1fr}
+  .awards{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg2);border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .links a{padding:14px 20px;border-top:1px solid var(--line)}
+  .menu-btn{display:block}
+  .mini,.skills{grid-template-columns:1fr}
+  .term-body{font-size:12px;min-height:280px}
+  section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">~/shubh<span>.bohra</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">menu</button>
+    <div class="links" id="links">
+      <a href="#about"><b>01.</b> about</a>
+      <a href="#experience"><b>02.</b> experience</a>
+      <a href="#projects"><b>03.</b> projects</a>
+      <a href="#skills"><b>04.</b> skills</a>
+      <a href="#contact"><b>05.</b> contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="tag"><span class="dot"></span>open to AI engineering internships &amp; roles</div>
+      <h1>Hi, I'm <span class="g">Shubh Bohra</span>.<br>I build AI that ships.</h1>
+      <div class="role mono">&gt; <span class="typed" id="typed"></span><span class="caret"></span></div>
+      <p class="lead">AI/LLM engineer focused on agentic systems, RAG pipelines and real-time voice AI. I like measuring things: eval harnesses, latency budgets, and fixes backed by reproducible numbers instead of guesswork.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">view projects →</a>
+        <a class="btn" href="https://drive.google.com/file/d/1u0hWoAbyBFaoklNs0ywfbdJ-6IjteNxR/view?usp=sharing" target="_blank" rel="noopener">resume.pdf</a>
+        <a class="btn" href="https://github.com/kodebyshubh" target="_blank" rel="noopener">github</a>
+        <a class="btn" href="https://www.linkedin.com/in/shubh-bohra-056691293/" target="_blank" rel="noopener">linkedin</a>
+      </div>
+    </div>
+    <div class="term" aria-label="terminal">
+      <div class="term-bar"><i></i><i></i><i></i><span>shubh@bengaluru: ~</span></div>
+      <div class="term-body" id="term"></div>
+    </div>
+  </header>
+
+  <section id="about" class="reveal">
+    <div class="sh"><span class="n">01.</span><h2>about</h2><span class="ln"></span></div>
+    <div class="about">
+      <div>
+        <p>I'm a final-year <b>Computer Science (Design)</b> student at <b>Dayananda Sagar College of Engineering</b>, Bengaluru (CGPA 8.43, batch of 2027).</p>
+        <p>Most of my work lives in <b>Python + FastAPI</b>: multi-agent orchestration with LangChain and LangGraph, hybrid SQL + vector retrieval, guardrails, MCP servers, and streaming STT/TTS pipelines. At Tez Health I cut a voice bot's time-to-first-audio by <b>54%</b>; on my own projects I fine-tune models and write blind evals to prove the improvement is real.</p>
+        <p>I also enjoy the backend fundamentals behind AI products: transactions, concurrency, clean APIs, and deploying the thing so people can actually use it.</p>
+      </div>
+      <div class="stats">
+        <div class="avatar"><img src="https://avatars.githubusercontent.com/u/181488523?v=4" alt="Shubh Bohra" loading="lazy"><div><b>@kodebyshubh</b>Bengaluru, India</div></div>
+        <div class="stat"><div class="num" data-count="20">0</div><div class="lbl">public repos</div></div>
+        <div class="stat"><div class="num" data-count="54" data-suffix="%">0</div><div class="lbl">faster TTFA at Tez Health</div></div>
+        <div class="stat"><div class="num" data-count="2">0</div><div class="lbl">internships</div></div>
+        <div class="stat"><div class="num">8.43</div><div class="lbl">CGPA</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="sh"><span class="n">02.</span><h2>experience</h2><span class="ln"></span></div>
+    <div class="tl">
+      <div class="job">
+        <div class="job-h"><h3>Python Intern <span>@ Tez Health</span></h3><span class="when">jan 2026 to apr 2026</span></div>
+        <ul>
+          <li>Built <b>Dr. Tez</b>, a multilingual medical triage voice chatbot (FastAPI + Gemini 2.0 Flash) supporting voice and text in <b>5 Indian languages</b>, with dual-intent routing for triage and healthcare commerce.</li>
+          <li>Engineered a sentence-level TTS streaming pipeline (Sarvam AI, async parallel synthesis) that cut time-to-first-audio from 2.5 to 4s down to <b>~1.5s</b>, a 54% improvement.</li>
+          <li>Shipped WebSocket real-time STT with live captions, server-side VAD, and an LLM-skip path for simple turns that saved <b>1 to 2s per turn</b>.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-h"><h3>Web Development Intern <span>@ Sangham Limited</span></h3><span class="when">jul 2025 to aug 2025</span></div>
+        <ul>
+          <li>Built a Java Spring Boot email automation system that replaced manual mail merge, improving HR communication efficiency by <b>50%</b>.</li>
+          <li>Automated Excel employee-data processing to send personalized emails with generated PDF CTC letters, reducing manual errors by <b>60%</b>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="sh"><span class="n">03.</span><h2>featured projects</h2><span class="ln"></span></div>
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">all</button>
+      <button data-f="agents">agents</button>
+      <button data-f="voice">voice ai</button>
+      <button data-f="rag">rag / search</button>
+      <button data-f="fullstack">full-stack</button>
+    </div>
+    <div class="grid" id="grid"></div>
+
+    <div class="more-h"><b>$</b> ls ./other-projects</div>
+    <div class="mini" id="mini"></div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="sh"><span class="n">04.</span><h2>skills</h2><span class="ln"></span></div>
+    <div class="skills">
+      <div class="sk"><h4>ai / llm</h4><div class="chips"><span>LangChain</span><span>LangGraph</span><span>RAG</span><span>MCP</span><span>Groq</span><span>Gemini API</span><span>Ollama</span><span>Hugging Face</span><span>LoRA / Unsloth</span><span>Embeddings</span><span>Eval harnesses</span></div></div>
+      <div class="sk"><h4>voice</h4><div class="chips"><span>Streaming STT</span><span>Sentence-level TTS</span><span>WebSockets</span><span>VAD</span><span>Sarvam AI</span><span>Deepgram</span><span>AssemblyAI</span><span>LiveKit</span></div></div>
+      <div class="sk"><h4>backend</h4><div class="chips"><span>FastAPI</span><span>Pydantic</span><span>Node.js / Express</span><span>Spring Boot</span><span>REST APIs</span><span>Docker</span><span>Linux</span><span>Git</span></div></div>
+      <div class="sk"><h4>languages</h4><div class="chips"><span>Python</span><span>Java</span><span>C++</span><span>C</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span></div></div>
+      <div class="sk"><h4>data</h4><div class="chips"><span>PostgreSQL</span><span>ChromaDB</span><span>MongoDB</span><span>SQLite</span><span>Prisma</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span></div></div>
+      <div class="sk"><h4>frontend</h4><div class="chips"><span>React</span><span>Next.js</span><span>Tailwind CSS</span><span>Streamlit</span><span>Vite</span></div></div>
+    </div>
+  </section>
+
+  <section id="awards" class="reveal">
+    <div class="sh"><span class="n">&gt;&gt;</span><h2>awards</h2><span class="ln"></span></div>
+    <div class="awards">
+      <div class="aw"><div class="ic">#1</div><div><h3>Smart India Hackathon: Internal Round Winner</h3><span class="when">sep 2025 · team lead</span><p>Led a team of 6 to win the internal round of SIH (MoE's Innovation Cell &amp; AICTE) with an end-to-end technical solution.</p></div></div>
+      <div class="aw"><div class="ic">#2</div><div><h3>Ideathon'23: First Runner-Up</h3><span class="when">nov 2023</span><p>Led a 4-member team pitching a data-backed plan to boost EV adoption and public transport use.</p></div></div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <div class="contact">
+      <span class="mono" style="color:var(--green);font-size:14px">05. what's next?</span>
+      <h2>Let's build something.</h2>
+      <p>I'm looking for AI engineering internships and full-time roles for 2027. If you're working on agents, voice, or retrieval, I'd love to hear from you.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:shubhbohra44@gmail.com">say hello →</a>
+        <a class="btn" href="https://www.linkedin.com/in/shubh-bohra-056691293/" target="_blank" rel="noopener">linkedin</a>
+        <a class="btn" href="https://github.com/kodebyshubh" target="_blank" rel="noopener">github</a>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>built by shubh bohra · <span id="yr"></span></footer>
+
+<script>
+const GH = "https://github.com/kodebyshubh/";
+const ghIcon = '<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>';
+const extIcon = '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>';
+
+const featured = [
+  {name:"OpsAgent", repo:"opsagent", kind:"autonomous agent", tags:["agents","rag"],
+   desc:"Autonomous operations agent for an e-commerce store. Takes a plain-English request, plans, retrieves in parallel from SQLite, ChromaDB and a JSON catalog, flags conflicting policies, explains its reasoning, and pauses for human approval before risky actions.",
+   hl:"<em>human-in-the-loop</em> via LangGraph interrupt · append-only audit log · parallel actions",
+   stack:["LangGraph","Groq","ChromaDB","SQLite","Streamlit","Typer"]},
+  {name:"Bolo.ai", repo:"Bolo.ai", kind:"voice agent + fine-tuning", tags:["voice"],
+   desc:"Hinglish voice agent: STT → tool-calling LLM → a LoRA fine-tuned Orpheus-3B TTS trained on self-recorded + IndicTTS data, with a WebSocket sentence-streaming layer on top.",
+   hl:"blind eval: pronunciation <em>0.40 → 0.65</em> (+62%), naturalness 2.80 → 3.50",
+   stack:["Unsloth","LoRA","Orpheus-3B","AssemblyAI","Groq","WebSockets"]},
+  {name:"TriageForge", repo:"triage-agent", kind:"multi-agent system", tags:["agents","rag"],
+   desc:"Support-ticket triage where an Orchestrator agent delegates to Classifier, Retriever/Responder and Escalator tools, plus a separate-process MCP server. Guardrails for PII, prompt injection and output moderation.",
+   hl:"custom eval harness lifted routing accuracy <em>0% → 50%+</em>",
+   stack:["LangChain","MCP","FastAPI","Groq","ChromaDB","Pydantic"]},
+  {name:"Saarthi MedAI", repo:"Saarthi-MedAI", kind:"healthcare voice assistant", tags:["voice"],
+   desc:"FastAPI healthcare voice/chat assistant with clinical triage and follow-up questions, pluggable Sarvam or Google STT/TTS, SSE streaming with sentence-level TTS chunks, and a feature-flagged WebSocket voice mode.",
+   hl:"sentence-level <em>streaming TTS</em> over SSE + WebSocket",
+   stack:["FastAPI","Gemini","Sarvam AI","SSE","WebSockets","FFmpeg"]},
+  {name:"FloatChat", repo:"Floatchat", kind:"rag platform", tags:["rag"],
+   desc:"Conversational analysis of ARGO ocean float data. Classifies queries, then answers with hybrid PostgreSQL + ChromaDB search, maps, depth profiles and time series. Multilingual, with an ETL pipeline for raw NetCDF.",
+   hl:"hybrid <em>SQL + vector</em> retrieval over 122,000+ profiles",
+   stack:["FastAPI","PostgreSQL","ChromaDB","Groq","Streamlit","Plotly"]},
+  {name:"AI Interview Coach", repo:"interview-coach", kind:"multi-agent app", tags:["agents","rag","fullstack"],
+   desc:"Upload a resume and JD, get interviewed by an AI, receive rubric-scored feedback per answer with adaptive follow-up probes, and a final performance report.",
+   hl:"LangGraph nodes · <em>Groq → Gemini → Ollama</em> fallback chain · MCP question bank",
+   stack:["LangGraph","FastAPI","Next.js","PostgreSQL","ChromaDB","MCP"]},
+  {name:"Sherlock", repo:"sherlock-candidate-identification", kind:"real-time signal fusion", tags:["agents"],
+   desc:"Identifies which participant in a live interview call is the candidate by fusing weak signals (name matching, LLM role classification, speaking patterns, email domain) into a running confidence score with a full evidence trail.",
+   hl:"explicit <em>ambiguous</em> state instead of confident wrong guesses",
+   stack:["FastAPI","WebSockets","Groq","pytest"]},
+  {name:"Mini ERP + CRM", repo:"mini-erp-crm", live:"https://mini-erp-crm-beige-six.vercel.app", kind:"full-stack", tags:["fullstack"],
+   desc:"Operations portal for a distribution company: customers, stock, purchase orders, challans and invoice PDFs, with role-based access for Admin, Sales, Warehouse and Accounts.",
+   hl:"stock can <em>never go negative</em>: enforced in a Prisma transaction",
+   stack:["TypeScript","Express","Prisma","PostgreSQL","React","Docker"]}
+];
+
+const others = [
+  {n:"maneuver-agent-project", d:"Real-time voice agent that runs a live discovery call and captures leads as you talk.", s:"LiveKit · Deepgram · Groq"},
+  {n:"Sporotomic-podcast-bot", d:"Podcast Q&A RAG bot that jumps to the exact YouTube timestamp. BM25 + vector with RRF.", s:"faster-whisper · ChromaDB"},
+  {n:"redrob-candidate-ranker", d:"Ranks 100,000 candidate profiles against a JD on CPU in under 5 minutes.", s:"MiniLM · NumPy"},
+  {n:"Groweasy-CSV-Importer", d:"Maps CSV lead exports in any layout into a CRM schema with streamed LLM batches.", s:"Next.js · Express · Groq"},
+  {n:"fi-uptime-monitor", d:"Registers URLs, pings them on an async scheduler, shows live status and latency.", s:"FastAPI · React · Docker"},
+  {n:"fifa-assistant", d:"Natural-language questions over FIFA 23 data. LLM for intent, Pandas for answers.", s:"Llama 3.1 · Streamlit"},
+  {n:"AI_RESUME_SCANNER", d:"Parses PDF/DOCX resumes and ranks candidates with TF-IDF and skill overlap.", s:"FastAPI · spaCy · Docker"},
+  {n:"Artisian-AI", d:"AI storytelling platform with speech-to-text and multi-language translation.", s:"React · Node · Google Cloud", live:true},
+  {n:"Personalized-Health-Tracker-and-Advisior", t:"HealthHub", d:"Health tracking platform with patient and doctor portals and appointment booking.", s:"React · Supabase", live:true},
+  {n:"community-hero-hyperlocal", d:"AI civic platform for reporting and tracking hyperlocal community issues.", s:"TypeScript · Gemini"},
+  {n:"Spring-boot-email-automation-system", t:"spring-email-automation", d:"Personalized emails with generated PDF letters from CSV employee data.", s:"Java · Spring Boot"}
+];
+
+const grid = document.getElementById("grid");
+grid.innerHTML = featured.map(p => `
+  <article class="card" data-tags="${p.tags.join(" ")}">
+    <div class="card-top">
+      <div><div class="kind">// ${p.kind}</div><h3>${p.name}${p.live?'<span class="live">LIVE</span>':''}</h3></div>
+      <div class="icons">
+        <a href="${GH+p.repo}" target="_blank" rel="noopener" aria-label="${p.name} on GitHub">${ghIcon}</a>
+        ${p.live?`<a href="${p.live}" target="_blank" rel="noopener" aria-label="${p.name} live demo">${extIcon}</a>`:''}
+      </div>
+    </div>
+    <p>${p.desc}</p>
+    <div class="hl">${p.hl}</div>
+    <div class="stack">${p.stack.map(s=>`<span>${s}</span>`).join("")}</div>
+  </article>`).join("");
+
+document.getElementById("mini").innerHTML = others.map(o => `
+  <a href="${GH+o.n}" target="_blank" rel="noopener">
+    <b>${o.t||o.n}${o.live?' <span class="live">LIVE</span>':''}</b><span>${o.d}</span><i>${o.s}</i>
+  </a>`).join("");
+
+document.getElementById("filters").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("on", x===b));
+  const f = b.dataset.f;
+  document.querySelectorAll(".card").forEach(c => c.classList.toggle("hide", f!=="all" && !c.dataset.tags.includes(f)));
+});
+
+// typed roles
+const roles = ["AI / LLM Engineer","building multi-agent systems","shipping RAG pipelines","real-time voice AI","FastAPI + Python"];
+const typed = document.getElementById("typed");
+let ri=0, ci=0, del=false;
+(function type(){
+  const w = roles[ri];
+  typed.textContent = w.slice(0, ci);
+  if(!del && ci<w.length){ci++; setTimeout(type,65)}
+  else if(!del){del=true; setTimeout(type,1500)}
+  else if(ci>0){ci--; setTimeout(type,30)}
+  else{del=false; ri=(ri+1)%roles.length; setTimeout(type,250)}
+})();
+
+// terminal
+const lines = [
+  '<span class="p">$</span> whoami',
+  'shubh bohra <span class="c"># ai engineer, bengaluru</span>',
+  '<span class="p">$</span> cat stack.json',
+  '{ <span class="k">"lang"</span>: <span class="s">"python"</span>, <span class="k">"api"</span>: <span class="s">"fastapi"</span>,',
+  '  <span class="k">"agents"</span>: [<span class="s">"langgraph"</span>, <span class="s">"langchain"</span>, <span class="s">"mcp"</span>],',
+  '  <span class="k">"retrieval"</span>: <span class="s">"sql + vector"</span>, <span class="k">"voice"</span>: <span class="s">"stt/tts streaming"</span> }',
+  '<span class="p">$</span> ./benchmark --tez-health',
+  'ttfa: <span class="v">2.5-4s</span> → <span class="v">1.5s</span>  <span class="c">(-54%)</span>',
+  '<span class="p">$</span> git log --oneline | wc -l',
+  '<span class="k">20</span> public repos and counting',
+  '<span class="p">$</span> <span class="caret"></span>'
+];
+const term = document.getElementById("term");
+let li=0;
+(function nextLine(){
+  if(li>=lines.length) return;
+  const d = document.createElement("div"); d.innerHTML = lines[li++]; term.appendChild(d);
+  setTimeout(nextLine, lines[li-1].includes('class="p"') ? 520 : 240);
+})();
+
+// reveal + counters
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if(!e.isIntersecting) return;
+  e.target.classList.add("in");
+  e.target.querySelectorAll("[data-count]").forEach(n => {
+    const t=+n.dataset.count, suf=n.dataset.suffix||""; let v=0;
+    const step=()=>{ v+=Math.max(1,Math.ceil(t/30)); if(v>=t){n.textContent=t+suf}else{n.textContent=v+suf; requestAnimationFrame(step)} };
+    step();
+  });
+  io.unobserve(e.target);
+}), {threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+// mobile menu
+const links = document.getElementById("links");
+document.getElementById("menuBtn").onclick = () => links.classList.toggle("open");
+links.addEventListener("click", e => { if(e.target.closest("a")) links.classList.remove("open") });
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
